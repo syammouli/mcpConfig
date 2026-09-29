@@ -1,0 +1,12 @@
+services:
+ 
+  rt-openapi-mcp-server:
+    container_name: rt_openapi_mcp_server_backend
+    image: rt-openapi-mcp-server
+    build:
+      context: ./services/openapi_mcp_server
+      dockerfile: Dockerfile
+    ports:
+      - 8028:8028
+    command: python app/server.py
+    restart: always
